@@ -10,8 +10,8 @@ import time
 def PrepareData(r_dir = "TrainingData/Ready/"):
 	# Import our data
 
-	num_of_feat  = 7
-	total_column = 9
+	num_of_feat  = 5
+	total_column = 7
 
 	train_data = pd.read_csv("{}{}".format(r_dir, "train_data.csv"))
 	eval_data = pd.read_csv("{}{}".format(r_dir, "eval_data.csv"))
@@ -45,13 +45,13 @@ def PrepareModel():
 
 
 	# 10 NEURONS EACH IN DENSE HIDDEN LAYER
-	model.add(Dense(50, activation='relu'))
+	#model.add(Dense(50, activation='relu'))
 
-	model.add(Dense(50, activation='relu'))
+	model.add(Dense(10, activation='relu'))
 
-	model.add(Dense(50, activation='relu'))
+	model.add(Dense(10, activation='relu'))
 
-	model.add(Dense(30, activation='relu'))
+	model.add(Dense(5, activation='relu'))
 
 	# LAST LAYER IS THE OUTPUT LAYER
 	model.add(Dense(2))
@@ -92,7 +92,7 @@ def NNModelTrain():
 	print ("NN Training Start")
 	start_time = time.time()
 
-	save_filepath = "SavedModels/annModels_20211214_0100"
+	save_filepath = "SavedModels/annModels_20211222_1600"
 
 	# Prepare data
 	x_train, y_train, x_eval, y_eval, x_test, y_test = PrepareData()

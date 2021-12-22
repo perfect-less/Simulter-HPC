@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import random
 import math
-from math import cos, sin, tan
+from math import cos, sin
 
 
 def AngleRoll(angle):
@@ -55,8 +55,8 @@ def SimulatePendulum(filename = "ourData.csv"):
         Data[i, 2] = cos(theta)
         Data[i, 3] = y_d
         Data[i, 4] = theta_d
-        Data[i, 5] = theta_d*theta_d
-        Data[i, 6] = cos(theta)**2
+        #Data[i, 5] = theta_d*theta_d
+        #Data[i, 6] = cos(theta)**2
        
         # Update Time
         t = t + dt
@@ -78,16 +78,17 @@ def SimulatePendulum(filename = "ourData.csv"):
         
         #Data[i, 5] = sin(theta)
         #Data[i, 6] = cos(theta)
-        Data[i, 7] = y_dd * dt
-        Data[i, 8] = theta_dd * dt
+        Data[i, 5] = y_dd * dt
+        Data[i, 6] = theta_dd * dt
 
     ## Save Into CSV
     #DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "sin_o", "cos_o", "yDot_del_o", "thetaD_del_o"])
-    #DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "yDot_del_o", "thetaD_del_o"])
-    DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "thetaDD_in", "cos2_in", "yDot_del_o", "thetaD_del_o"])
+    DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "yDot_del_o", "thetaD_del_o"])
+    #DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "thetaDD_in", "cos2_in", "yDot_del_o", "thetaD_del_o"])
     DataDF.head()
 
     DataDF.to_csv(filename, index= False)
+    
 
 
 ## Run the script if main
