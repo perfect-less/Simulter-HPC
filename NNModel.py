@@ -92,7 +92,7 @@ def NNModelTrain():
 	print ("NN Training Start")
 	start_time = time.time()
 
-	save_filepath = "SavedModels/annModels_20211222_1600"
+	save_filepath = "SavedModels/annModels_20211222_1600_paper"
 
 	# Prepare data
 	x_train, y_train, x_eval, y_eval, x_test, y_test = PrepareData()
