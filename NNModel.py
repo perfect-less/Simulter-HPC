@@ -47,11 +47,11 @@ def PrepareModel():
 	# 10 NEURONS EACH IN DENSE HIDDEN LAYER
 	#model.add(Dense(50, activation='relu'))
 
-	model.add(Dense(10, activation='relu'))
+	model.add(Dense(30, activation='relu'))
+
+	model.add(Dense(30, activation='relu'))
 
 	model.add(Dense(10, activation='relu'))
-
-	model.add(Dense(5, activation='relu'))
 
 	# LAST LAYER IS THE OUTPUT LAYER
 	model.add(Dense(2))
@@ -92,7 +92,7 @@ def NNModelTrain():
 	print ("NN Training Start")
 	start_time = time.time()
 
-	save_filepath = "SavedModels/annModels_20211222_1600_paper"
+	save_filepath = "SavedModels/annModels_20211223_1600_paper"
 
 	# Prepare data
 	x_train, y_train, x_eval, y_eval, x_test, y_test = PrepareData()

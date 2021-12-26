@@ -43,7 +43,7 @@ def SimulatePendulum(filename = "ourData.csv"):
     ## Initialize
 
     t = 0 # Seconds
-    Data = np.zeros([index_num, 9])
+    Data = np.zeros([index_num, 7])
 
     ## Simulations
 
