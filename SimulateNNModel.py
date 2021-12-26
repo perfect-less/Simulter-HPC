@@ -1,4 +1,5 @@
 import tensorflow as tf
+import tensorflow.keras as keras
 
 import pandas as pd
 import numpy as np
@@ -22,7 +23,7 @@ def GetFilesNames(filepath = "TrainingData/Test/"):
 def ImportModel(model_filepath = "SavedModels/annModels_20211222_1700_paper"):
     ## Load Model
 
-    model = tf.keras.models.load_model(model_filepath)
+    model = keras.models.load_model(model_filepath)
 
     model.compile(loss='mean_squared_error',
                 optimizer='adam',
