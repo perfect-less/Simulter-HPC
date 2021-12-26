@@ -85,9 +85,11 @@ def SimulateNN():
 
     # GetFiles
     files_names = GetFilesNames()
+    print ("Files Name Obtained")
 
     # Import Models
     model = ImportModel("SavedModels/annModels_20211222_1700_paper")
+    print ("Model is Ready")
 
     # Creating DataFrames
     SimulationDF = pd.DataFrame(files_names, columns= ["Files Names"])
@@ -95,6 +97,7 @@ def SimulateNN():
     SimulationDF["yDot Dev (m/s)"] = 999
     SimulationDF["ThetaDot Dev (rad/s)"] = 999
 
+    print ("Begin Simulations")
     # Do Simulations
     for i in range( len (files_names) ):
 
@@ -108,9 +111,11 @@ def SimulateNN():
         SimulationDF.loc[i, "Theta Dev (rad)"] = theta_dev
         SimulationDF.loc[i, "yDot Dev (m/s)"] = yDot_dev
         SimulationDF.loc[i, "ThetaDot Dev (rad/s)"] = thetaDot_dev
+        print ("..i = ", i)
 
     # Save CSV
     SimulationDF.to_csv("TrainingData/Simulated_30.csv")
+    print ("File Saved")
 
 
 
