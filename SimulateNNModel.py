@@ -1,3 +1,4 @@
+from h5py._hl import files
 import tensorflow as tf
 import tensorflow.keras as keras
 
@@ -111,7 +112,7 @@ def SimulateNN():
         SimulationDF.loc[i, "Theta Dev (rad)"] = theta_dev
         SimulationDF.loc[i, "yDot Dev (m/s)"] = yDot_dev
         SimulationDF.loc[i, "ThetaDot Dev (rad/s)"] = thetaDot_dev
-        print ("..i = ", i)
+        print ("..i = {}/{}".format(i, len(files_names)))
 
     # Save CSV
     SimulationDF.to_csv("TrainingData/Simulated_30.csv")
