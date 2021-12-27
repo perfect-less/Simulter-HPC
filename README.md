@@ -1,2 +1,4 @@
 # Simulter-HPC
-Repositories for all of my Scripts which needs to run in HPC
+Repositories for Scripts needed to run in HPC
+
+Data are not here, cause the size are quite large and hence still remains in the HPC.

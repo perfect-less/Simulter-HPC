@@ -40,13 +40,6 @@ def PrepareModel():
 
 	## FIRST SET OF LAYERS
 
-	# FEATURE LAYER
-	#model.add(Dense(7)) No Need For This Layer
-
-
-	# 10 NEURONS EACH IN DENSE HIDDEN LAYER
-	#model.add(Dense(50, activation='relu'))
-
 	model.add(Dense(30, activation='relu'))
 
 	model.add(Dense(30, activation='relu'))

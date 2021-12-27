@@ -37,11 +37,8 @@ def SimulatePendulum(filename = "ourData.csv"):
     y_dd = 0      # m/s 
     theta_dd = 0  # m/s
 
-    # F(x) for holding theta
-    #f = g*tan(theta)*(M+m-m*(cos(theta)**2)) + m*g*sin(theta)*cos(theta) - m*(theta_d^theta_d)*l*sin(theta)
-    
-    ## Initialize
 
+    ## Initialize
     t = 0 # Seconds
     Data = np.zeros([index_num, 7])
 
@@ -55,8 +52,6 @@ def SimulatePendulum(filename = "ourData.csv"):
         Data[i, 2] = cos(theta)
         Data[i, 3] = y_d
         Data[i, 4] = theta_d
-        #Data[i, 5] = theta_d*theta_d
-        #Data[i, 6] = cos(theta)**2
        
         # Update Time
         t = t + dt
@@ -82,9 +77,7 @@ def SimulatePendulum(filename = "ourData.csv"):
         Data[i, 6] = theta_dd * dt
 
     ## Save Into CSV
-    #DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "sin_o", "cos_o", "yDot_del_o", "thetaD_del_o"])
     DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "yDot_del_o", "thetaD_del_o"])
-    #DataDF = pd.DataFrame(data=Data, columns=["F", "sin_in", "cos_in", "yDot_in", "thetaD_in", "thetaDD_in", "cos2_in", "yDot_del_o", "thetaD_del_o"])
     DataDF.head()
 
     DataDF.to_csv(filename, index= False)
